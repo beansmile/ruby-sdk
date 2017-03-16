@@ -23,7 +23,7 @@ module Qiniu
           code, body, headers = Qiniu::Storage.stat(@bucket, @key)
           if code == 404 || code == 612 then
             # 文件不存在，尝试上传
-            pp = Qiniu::Auth.PutPolicy.new(@bucket, @key)
+            pp = Qiniu::Auth::PutPolicy.new(@bucket, @key)
             code, body, headers = Qiniu::Storage.upload_with_put_policy(
               pp,
               local_file
@@ -31,7 +31,7 @@ module Qiniu
             puts "Put a test file for Persistance cases"
             puts code.inspect
             puts body.inspect
-            puts header.inspect
+            puts headers.inspect
           end
         end
 

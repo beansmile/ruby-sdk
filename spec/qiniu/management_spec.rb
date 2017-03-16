@@ -24,6 +24,7 @@ module Qiniu
           nil,
           bucket: @bucket
         )
+        
         code.should == 200
       end
 

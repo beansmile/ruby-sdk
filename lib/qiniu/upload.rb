@@ -150,6 +150,10 @@ module Qiniu
           key = put_policy.key
         end
 
+        if opts[:bucket].nil?
+          opts[:bucket] = put_policy.bucket
+        end
+
         return upload_with_token_2(uptoken, local_file, key, x_vars, opts)
       rescue BucketIsMissing
         raise 'upload_with_put_policy requires :bucket option when multi_region is enabled'

@@ -3,10 +3,10 @@
 require File.expand_path('../lib/qiniu/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ['why404','BluntBlade']
+  gem.authors       = %w[why404 BluntBlade]
   gem.email         = ['sdk@qiniu.com']
-  gem.description   = %q{Qiniu Resource (Cloud) Storage SDK for Ruby. See: http://developer.qiniu.com/docs/v6/sdk/ruby-sdk.html}
-  gem.summary       = %q{Qiniu Resource (Cloud) Storage SDK for Ruby}
+  gem.description   = 'Qiniu Resource (Cloud) Storage SDK for Ruby. See: http://developer.qiniu.com/docs/v6/sdk/ruby-sdk.html'
+  gem.summary       = 'Qiniu Resource (Cloud) Storage SDK for Ruby'
   gem.homepage      = 'https://github.com/qiniu/ruby-sdk'
 
   gem.files         = `git ls-files`.split($\)
@@ -21,9 +21,8 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rake', '~> 12'
   gem.add_development_dependency 'rspec', '~> 3.5'
   gem.add_development_dependency 'fakeweb', '~> 1.3'
-  gem.add_runtime_dependency 'json', '~> 1.8'
   gem.add_runtime_dependency 'rest-client', '~> 2.0', '>= 2.0.0'
-  gem.add_runtime_dependency 'mime-types', '~> 2.4', '>= 2.4.0'
+  gem.add_runtime_dependency 'mime-types', '~> 3.1', '>= 3.1'
   gem.add_runtime_dependency 'ruby-hmac', '~> 0.4'
   gem.add_runtime_dependency 'jruby-openssl', '~> 0.7' if RUBY_PLATFORM == 'java'
 end
